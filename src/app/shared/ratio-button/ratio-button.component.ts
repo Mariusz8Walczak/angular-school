@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-ratio-button',
@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RatioButtonComponent implements OnInit {
 
+  @Input() test = 'test';
+  @Output() testExample: EventEmitter<string>=new EventEmitter();
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  emitEvent(){
+    this.testExample.emit('test333');
+    console.log(1111);
   }
 
 }
