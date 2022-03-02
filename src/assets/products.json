@@ -1,0 +1,32 @@
+[
+  {
+    "name": "massage",
+    "price": 1.12,
+    "forGender": "all",
+    "duration": 60
+  },
+  {
+    "name": "warm up",
+    "price": 2,
+    "forGender": "all",
+    "duration": 15
+  },
+  {
+    "name": "make sandwich",
+    "price": 1.5,
+    "forGender": "women",
+    "duration": 5
+  },
+  {
+    "name": "marathon",
+    "price": 5,
+    "forGender": "woman",
+    "duration": 120
+  },
+  {
+    "name": "sprint",
+    "price": 0.25,
+    "forGender": "man",
+    "duration": 1
+  }
+]

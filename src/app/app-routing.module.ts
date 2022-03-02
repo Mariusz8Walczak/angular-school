@@ -5,6 +5,10 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./client-panel/client-panel.module').then(m => m.ClientPanelModule),
+  },
+  {
+    path: '',
+    loadChildren: () => import('./shop/shop.module').then(m => m.ShopModule),
   }
 ];
 

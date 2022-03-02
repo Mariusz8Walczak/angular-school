@@ -1,4 +1,5 @@
 {
   "name": "Mariusz",
-  "type": "Admin"
+  "type": "Admin",
+  "gender": "man"
 }
