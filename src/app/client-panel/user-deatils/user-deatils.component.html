@@ -1,3 +1,75 @@
-<h2>User Data</h2>
-<p>{{user?.name}}</p>
-<app-ratio-button [test]="'test22'" (testExample)="testingEmitter($event)"></app-ratio-button>
+<mat-card>
+  <mat-card-title>
+    <h2>User Data</h2>
+  </mat-card-title>
+  <mat-card-content>
+    <p>{{user?.name}}</p>
+    <app-ratio-button [test]="'test22'" (testExample)="testingEmitter($event)"></app-ratio-button>
+
+    <form (ngSubmit)="submit()" [formGroup]="profileForm">
+      <mat-form-field appearance="outline">
+        <mat-label>Imię:</mat-label>
+        <input matInput type="text" value="" formControlName="firstName" placeholder="Imię">
+
+        <mat-error *ngIf="profileForm.controls.firstName.hasError('required')">
+          Imię jest <strong>wymagane</strong>
+        </mat-error>
+
+        <mat-error *ngIf="profileForm.controls.firstName.hasError('minlength')">
+          Imię jest <strong>za krótkie</strong>
+        </mat-error>
+
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>nazwisko:</mat-label>
+        <input matInput type="text" value="" formControlName="secondName" placeholder="Imię">
+
+        <mat-error *ngIf="profileForm.controls.secondName.hasError('required')">
+          Nazwisko jest <strong>wymagane</strong>
+        </mat-error>
+
+        <mat-error *ngIf="profileForm.controls.secondName.hasError('minlength')">
+          Nazwisko jest <strong>za krótkie</strong>
+        </mat-error>
+
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Email:</mat-label>
+        <input matInput type="text" value="" formControlName="email" placeholder="Email">
+
+        <mat-error *ngIf="profileForm.controls.email.hasError('required')">
+          Email jest <strong>wymagany</strong>
+        </mat-error>
+
+        <mat-error *ngIf="profileForm.controls.email.hasError('email')">
+          Podano nie poprawny adres email
+        </mat-error>
+
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Wiek:</mat-label>
+        <input matInput type="number" value="" formControlName="age" placeholder="Wiek">
+
+        <mat-error *ngIf="profileForm.controls.age.hasError('required')">
+          Wiek jest <strong>wymagany</strong>
+        </mat-error>
+
+        <mat-error *ngIf="profileForm.controls.age.hasError('min')">
+          Jesteś za młody, musisz mieć 18 lat
+        </mat-error>
+
+        <mat-error *ngIf="profileForm.controls.age.hasError('max')">
+          Zgłoś się do kardiologa
+        </mat-error>
+
+      </mat-form-field>
+
+
+      <button mat-button type="submit" [disabled]="!this.profileForm.touched">Wyślij</button>
+    </form>
+
+  </mat-card-content>
+</mat-card>
