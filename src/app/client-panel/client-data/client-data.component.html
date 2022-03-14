@@ -1,2 +1,8 @@
 <p>client-data works!</p>
+
+<button *ngIf="isLoginVisible()" mat-raised-button (click)="addLoginCookie()">login</button>
+
+<button *ngIf="!isLoginVisible()" mat-raised-button (click)="removeLoginCookie()">logout</button>
+
+
 <app-input></app-input>

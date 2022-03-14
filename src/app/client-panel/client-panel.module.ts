@@ -6,13 +6,15 @@ import { ClientPanelRoutingModule } from "src/app/client-panel/client-panel-rout
 import { SharedModule } from "src/app/shared/shared.module";
 import { MaterialModule } from "src/app/material/material.module";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { ClientDataWithParameterComponent } from './client-data-with-parameter/client-data-with-parameter.component';
 
 
 
 @NgModule({
   declarations: [
     ClientDataComponent,
-    UserDeatilsComponent
+    UserDeatilsComponent,
+    ClientDataWithParameterComponent
   ],
   imports: [
     CommonModule,

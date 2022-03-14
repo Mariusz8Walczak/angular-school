@@ -11,6 +11,7 @@ import { TestInterceptorInterceptor } from "src/app/core/test-interceptor.interc
 import {Test2Interceptor} from "src/app/core/test2.interceptor";
 import {Observable} from "rxjs";
 import {UserService} from "src/app/core/user.service";
+import {ErrorPagesModule} from "src/app/error-pages/error-pages.module";
 
 function initializeAppFactory(httpClient: HttpClient): () => Observable<any> {
   return () => httpClient.get("./assets/user.json");
@@ -27,7 +28,8 @@ function initializeAppFactory(httpClient: HttpClient): () => Observable<any> {
     BrowserAnimationsModule,
     ClientPanelModule,
     HttpClientModule,
-    SharedModule
+    SharedModule,
+    ErrorPagesModule
   ],
   providers: [
     {
