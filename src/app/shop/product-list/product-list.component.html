@@ -1,7 +1,15 @@
+<div>
+  <p>Szukajka</p>
+  <input mat-input [(ngModel)]="searchText" (keyup)="canSendToBackend()">
+</div>
 
-<div *ngFor="let product of products" class="product-card">
-<p>{{product.name}}</p>
+<div appTest *ngFor="let product of products" class="product-card">
+
+  <p>{{product.name}}</p>
   <p>{{product.duration}}</p>
   <p>{{product.price}}</p>
 </div>
+<p *ngIf="canSendToBackend()">
+  {{searchText}}
+</p>
 

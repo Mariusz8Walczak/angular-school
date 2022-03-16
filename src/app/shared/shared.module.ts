@@ -5,6 +5,7 @@ import { RatioButtonComponent } from './ratio-button/ratio-button.component';
 import { TopMenuComponent } from './top-menu/top-menu.component';
 import {RouterModule} from "@angular/router";
 import {MaterialModule} from "src/app/material/material.module";
+import { TestDirective } from './directives/test.directive';
 
 
 
@@ -12,17 +13,19 @@ import {MaterialModule} from "src/app/material/material.module";
   declarations: [
     InputComponent,
     RatioButtonComponent,
-    TopMenuComponent
+    TopMenuComponent,
+    TestDirective
   ],
   imports: [
     CommonModule,
     RouterModule,
     MaterialModule
   ],
-  exports: [
-    InputComponent,
-    RatioButtonComponent,
-    TopMenuComponent
-  ]
+    exports: [
+        InputComponent,
+        RatioButtonComponent,
+        TopMenuComponent,
+        TestDirective
+    ]
 })
 export class SharedModule { }
